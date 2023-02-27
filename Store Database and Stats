@@ -1,0 +1,34 @@
+--Create a tech store database
+
+CREATE TABLE lgstore (id integer primary key, product text, stock integer, price integer, sold integer, in_transit integer);
+
+INSERT INTO lgstore VALUES
+
+(1, "Mechanical Keyboard", 6, 60, 2, 1),
+(2, "Wireless Mouse", 10, 40, 8, 5),
+(3, "24' Monitor", 15, 80, 3, 2),
+(4, "Printer", 4, 100, 0, 0),
+(5, "HDMI Cable", 3, 20, 0, 0),
+(6, "CAT 5e Cable", 15, 15, 3, 0),
+(7, "Headphone", 20, 8, 15, 3),
+(8, "Graphics Card", 3, 200, 1, 1),
+(9, "USB Cable", 20, 4, 11, 4),
+(10, "Power Supply", 6, 60, 1, 0),
+(11, "SATA Cable", 20, 5, 4, 0),
+(12, "Intel i5 5600k", 2, 150, 0, 0),
+(13, "DDR4 RAM", 1, 80, 0, 0),
+(14, "Ethernet Switch", 3, 100, 1, 1),
+(15, "Router", 4, 200, 1, 1);
+
+--Display the database ordered by price
+SELECT * FROM lgstore 
+ORDER BY price DESC;
+
+--Display Max of intems in transit
+SELECT MAX(in_transit) FROM lgstore ;
+
+--Display Total of items sold
+SELECT SUM(sold) FROM lgstore;
+
+--Display items that have 3 or less in stock
+SELECT * FROM lgstore WHERE stock <=3;

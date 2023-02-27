@@ -24,7 +24,7 @@ INSERT INTO lgstore VALUES
 SELECT * FROM lgstore 
 ORDER BY price DESC;
 
---Display Max of intems in transit
+--Display Max of items in transit
 SELECT MAX(in_transit) FROM lgstore ;
 
 --Display Total of items sold
